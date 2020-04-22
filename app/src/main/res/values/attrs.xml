@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NewsTextView">
+        <attr name="textStyle" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="NewsToolbarView">
+    <attr name="menu_toolbar" format="boolean"/>
+    <attr name="icon_left_toolbar" format="boolean"/>
+    <attr name="icon_right_toolbar" format="boolean"/>
+    <attr name="icon_right_drawable" format="integer"/>
+    <attr name="title_toolbar" format="string"/>
+    </declare-styleable>
+
+</resources>
