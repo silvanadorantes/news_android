@@ -15,7 +15,7 @@ import com.example.silvanadorantescode.news_android.util.base.BaseFragment
  * Created by SilvanaDorantes on 21/04/20.
  */
 
-class ListFavoriteNewsFragment : BaseFragment() {
+class ListFavoriteNewsFragment : Fragment() {
 
     companion object{
         val TAG = ListFavoriteNewsFragment::class.java
@@ -33,8 +33,8 @@ class ListFavoriteNewsFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
+       /* view.findViewById<Button>(R.id.button_first).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+        }*/
     }
 }

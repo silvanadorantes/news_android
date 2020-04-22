@@ -68,13 +68,13 @@ class NewsToolbarView: LinearLayout {
 
         }
 
-        fun iconLeftOnClickListener(onClickListener: View.OnClickListener) {
-            newsBinding.iconLeft.setOnClickListener(onClickListener)
-        }
+    }
 
-        fun iconRigthOnClickListener(onClickListener: View.OnClickListener) {
-            newsBinding.iconRight.setOnClickListener(onClickListener)
-        }
+    fun iconLeftOnClickListener(onClickListener: View.OnClickListener) {
+        newsBinding.iconLeft.setOnClickListener(onClickListener)
+    }
 
+    fun iconRigthOnClickListener(onClickListener: View.OnClickListener) {
+        newsBinding.iconRight.setOnClickListener(onClickListener)
     }
 }

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+       <variable
+           name="clickListener"
+           type="android.view.View.OnClickListener" />
+        
+        <variable
+            name="articleItem"
+            type="com.example.silvanadorantescode.news_android.app.network.data.news.ArticlesListItem" />
+
+        <variable
+            name="likeClicklistener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_list_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{clickListener}"
+        app:cardElevation="@dimen/small_padding"
+        app:cardCornerRadius="@dimen/xnormal_padding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_news"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/news_item_image_height"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:imageUrl="@{articleItem.urlToImage}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{articleItem.title}"
+                android:layout_marginTop="@dimen/normal_padding"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/material_text_subhead"
+                android:textColor="@color/colorPrimaryText"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_news"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{articleItem.description}"
+                android:layout_marginTop="@dimen/xlarge_padding"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:maxLines="3"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/material_text_bodyM"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="normal"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"/>
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{articleItem.author}"
+                android:layout_marginTop="@dimen/xlarge_padding"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/material_text_small"
+                android:textColor="@color/colorPrimaryText"
+                android:textStyle="normal"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintEnd_toStartOf="@+id/publishedAt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description"/>
+
+            <TextView
+                android:id="@+id/publishedAt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xlarge_padding"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/material_text_small"
+                android:textColor="@color/colorPrimaryText"
+                android:textStyle="normal"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:textDate="@{articleItem.publishedAt}"
+                app:layout_constraintEnd_toStartOf="@id/checkboxLike"
+                app:layout_constraintStart_toEndOf="@+id/author"
+                app:layout_constraintTop_toBottomOf="@id/description"/>
+
+            <CheckBox
+                android:id="@+id/checkboxLike"
+                android:layout_width="@dimen/icon_xnormal"
+                android:layout_height="@dimen/icon_xnormal"
+                android:onClick="@{likeClicklistener}"
+                android:layout_marginTop="@dimen/xlarge_padding"
+                android:layout_marginStart="@dimen/normal_padding"
+                android:layout_marginEnd="@dimen/normal_padding"
+                android:padding="@dimen/micro_padding"
+                android:button="@drawable/checkbox_selector_black"
+                android:gravity="end"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/publishedAt" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
