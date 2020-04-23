@@ -108,7 +108,7 @@
     <dimen name="detail_backdrop_height">150dp</dimen>
     <dimen name="toolbar_height">65dp</dimen>
     <dimen name="xtoolbar_height">55dp</dimen>
-    <dimen name="news_item_image_height">95dp</dimen>
+    <dimen name="news_item_image_height">125dp</dimen>
 
 
     <!--Icons-->

@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main )
 
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

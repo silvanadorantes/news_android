@@ -1,10 +1,12 @@
 package com.example.silvanadorantescode.news_android.listnews.presentation.binding
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.silvanadorantescode.news_android.R
+import com.example.silvanadorantescode.news_android.home.presentation.HomeFragment.Companion.TAG
 import com.example.silvanadorantescode.news_android.util.Commons
 
 
@@ -28,8 +30,13 @@ fun bindIsGone(view: View, isGone: Boolean) {
 }
 
 @BindingAdapter("imageUrl")
-fun getImageNews(imgNews: ImageView, imageUrl: String ){
-    Commons.loadImageGlide(imageUrl, imgNews, R.drawable.ic_news_3, R.drawable.ic_news_3)
+fun getImageNews(imgNews: ImageView, imageUrl: String? ){
+    try {
+        Commons.loadImageGlide(imageUrl!!, imgNews, R.drawable.ic_news_3, R.drawable.ic_news_3)
+    }catch (e: Exception){
+        Log.d("BindingListNews", "error" )
+    }
+
 }
 
 @BindingAdapter("textDate")
@@ -42,3 +49,4 @@ fun getDateNews(dateNews: TextView, publishedAt: String?){
     }
 
 }
+

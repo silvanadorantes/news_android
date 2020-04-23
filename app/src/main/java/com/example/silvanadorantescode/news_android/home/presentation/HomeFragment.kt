@@ -39,7 +39,7 @@ class HomeFragment: Fragment() {
             tab.text = getTabTitle(position)
         }.attach()
 
-        (activity as AppCompatActivity).setSupportActionBar(homeBinding.toolbar)
+        //(activity as AppCompatActivity).setSupportActionBar(homeBinding.toolbar)
         return homeBinding.root
     }
 

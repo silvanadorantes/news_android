@@ -55,6 +55,8 @@ class ListNewsFragment : Fragment() {
         val  adapter = NewsAdapter()
         listNewsBinding.recyclerNews.adapter = adapter
         Log.d(TAG, "adapter" + " " + adapter)
+        subscribeUi(adapter, listNewsBinding)
+        adapter.notifyDataSetChanged()
 
     }
 
